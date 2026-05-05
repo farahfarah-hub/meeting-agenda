@@ -616,6 +616,82 @@
     margin: 0;
   }
 
+  /* Question block */
+  .question-block {
+    background: linear-gradient(135deg, #fffbf2 0%, #fff5e8 100%);
+    border: 1px solid #fadfa8;
+    border-radius: 16px;
+    padding: 24px 26px;
+    box-shadow: var(--shadow-sm);
+  }
+  .question-prompt {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .question-icon {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+    color: white;
+    font-size: 16px;
+    box-shadow: 0 6px 14px rgba(245,158,11,0.28);
+  }
+  .question-prompt p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.5;
+    padding-top: 6px;
+  }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  @media (max-width: 980px) { .approach-grid { grid-template-columns: 1fr; } }
+  .approach-card {
+    background: white;
+    border: 1px solid #f1e3c4;
+    border-radius: 12px;
+    padding: 18px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .approach-card:hover {
+    transform: translateY(-2px);
+    border-color: #e6c97f;
+    box-shadow: var(--shadow-md);
+  }
+  .approach-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+    color: white;
+    box-shadow: 0 4px 10px rgba(245,158,11,0.25);
+  }
+  .approach-card p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--text-2);
+    line-height: 1.55;
+  }
+
   /* Sub-sections inside a slide */
   .subsection {
     margin-top: 44px;
@@ -888,6 +964,29 @@
               <p>If the maid shares her address over the chatbot within her Loss Making period, she is invited to next day attendance and marked as available again in the accommodation.</p>
             </div>
           </div>
+
+          <div class="section-title">Question</div>
+          <div class="question-block">
+            <div class="question-prompt">
+              <span class="question-icon">❓</span>
+              <p>We have 3 approaches to trigger the relocation flow:</p>
+            </div>
+            <div class="approach-grid">
+              <div class="approach-card">
+                <div class="approach-num">01</div>
+                <p>We invite the maid to the center then tell her to relocate and if she did not come we call her.</p>
+              </div>
+              <div class="approach-card">
+                <div class="approach-num">02</div>
+                <p>We tell the maid all on chat but we cannot tell her that we will terminate her on chat due to risk reasons.</p>
+              </div>
+              <div class="approach-card">
+                <div class="approach-num">03</div>
+                <p>We call the maid and we do not invite her to inform her about relocation.</p>
+              </div>
+            </div>
+          </div>
+
           <div class="footer-tag">3 of 7</div>
         </article>
 
