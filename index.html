@@ -616,6 +616,43 @@
     margin: 0;
   }
 
+  /* Sub-sections inside a slide */
+  .subsection {
+    margin-top: 44px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+  }
+  .subsection:first-of-type {
+    margin-top: 8px;
+    padding-top: 0;
+    border-top: 0;
+  }
+  .subsection-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .subsection-heading .label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    background: var(--accent-soft);
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(79,107,255,0.18);
+  }
+  .subsection-heading h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin: 0;
+  }
+
   /* Scrollbars (subtle) */
   .sidebar::-webkit-scrollbar { width: 8px; }
   .sidebar::-webkit-scrollbar-thumb { background: #d8dce6; border-radius: 999px; }
@@ -632,15 +669,13 @@
       <div class="outline-label">Outline</div>
       <div class="tabs" id="tabs">
         <button class="tab" data-index="0"><span class="num">0</span><span class="label">Overview</span></button>
-        <button class="tab" data-index="1"><span class="num">1</span><span class="label">Current Attendance Flow</span></button>
-        <button class="tab" data-index="2"><span class="num">2</span><span class="label">Automation of Attendance Flow</span></button>
-        <button class="tab" data-index="3"><span class="num">3</span><span class="label">Current Relocation Flow</span></button>
-        <button class="tab" data-index="4"><span class="num">4</span><span class="label">Automation of the Relocation Flow</span></button>
-        <button class="tab" data-index="5"><span class="num">5</span><span class="label">Reducing restrictions on same day bookings</span></button>
-        <button class="tab" data-index="6"><span class="num">6</span><span class="label">With-Client (Not Picked Up) Maid Communication</span></button>
-        <button class="tab" data-index="7"><span class="num">7</span><span class="label">Improvements in Refusal Rates</span></button>
-        <button class="tab" data-index="8"><span class="num">8</span><span class="label">No-Show Deductions Policy</span></button>
-        <button class="tab" data-index="9"><span class="num">9</span><span class="label">Part-Time Cleaners Cost Issue</span></button>
+        <button class="tab" data-index="1"><span class="num">1</span><span class="label">Attendance</span></button>
+        <button class="tab" data-index="2"><span class="num">2</span><span class="label">Current Relocation Flow</span></button>
+        <button class="tab" data-index="3"><span class="num">3</span><span class="label">Automation of the Relocation Flow</span></button>
+        <button class="tab" data-index="4"><span class="num">4</span><span class="label">Reducing restrictions on same day bookings</span></button>
+        <button class="tab" data-index="5"><span class="num">5</span><span class="label">Improvements in Refusal Rates</span></button>
+        <button class="tab" data-index="6"><span class="num">6</span><span class="label">No-Show Deductions Policy</span></button>
+        <button class="tab" data-index="7"><span class="num">7</span><span class="label">Part-Time Cleaners Cost Issue</span></button>
       </div>
     </aside>
 
@@ -660,104 +695,132 @@
           <h1>Live Out × Mario</h1>
           <div class="sub">A walkthrough of attendance, relocation, booking and policy updates.</div>
           <div class="agenda-list" id="agendaList">
-            <div class="item" data-go="1"><span class="num">1</span><span>Current Attendance Flow</span><span class="arrow">→</span></div>
-            <div class="item" data-go="2"><span class="num">2</span><span>Automation of Attendance Flow</span><span class="arrow">→</span></div>
-            <div class="item" data-go="3"><span class="num">3</span><span>Current Relocation Flow</span><span class="arrow">→</span></div>
-            <div class="item" data-go="4"><span class="num">4</span><span>Automation of the Relocation Flow</span><span class="arrow">→</span></div>
-            <div class="item" data-go="5"><span class="num">5</span><span>Reducing restrictions on same day bookings</span><span class="arrow">→</span></div>
-            <div class="item" data-go="6"><span class="num">6</span><span>With-Client (Not Picked Up) Maid Communication</span><span class="arrow">→</span></div>
-            <div class="item" data-go="7"><span class="num">7</span><span>Improvements in Refusal Rates</span><span class="arrow">→</span></div>
-            <div class="item" data-go="8"><span class="num">8</span><span>No-Show Deductions Policy</span><span class="arrow">→</span></div>
-            <div class="item" data-go="9"><span class="num">9</span><span>Part-Time Cleaners Cost Issue</span><span class="arrow">→</span></div>
+            <div class="item" data-go="1"><span class="num">1</span><span>Attendance</span><span class="arrow">→</span></div>
+            <div class="item" data-go="2"><span class="num">2</span><span>Current Relocation Flow</span><span class="arrow">→</span></div>
+            <div class="item" data-go="3"><span class="num">3</span><span>Automation of the Relocation Flow</span><span class="arrow">→</span></div>
+            <div class="item" data-go="4"><span class="num">4</span><span>Reducing restrictions on same day bookings</span><span class="arrow">→</span></div>
+            <div class="item" data-go="5"><span class="num">5</span><span>Improvements in Refusal Rates</span><span class="arrow">→</span></div>
+            <div class="item" data-go="6"><span class="num">6</span><span>No-Show Deductions Policy</span><span class="arrow">→</span></div>
+            <div class="item" data-go="7"><span class="num">7</span><span>Part-Time Cleaners Cost Issue</span><span class="arrow">→</span></div>
           </div>
         </article>
 
-        <!-- Slide 1 -->
+        <!-- Slide 1: Attendance (combined) -->
         <article class="slide" data-index="1">
           <div class="eyebrow-tag">Section 01</div>
-          <h1>Current Attendance Flow</h1>
-          <p class="lede">Two core reasons were causing us to still do attendance manually on a daily basis:</p>
-          <div class="reason-grid">
-            <div class="reason-card">
-              <div class="reason-index">01</div>
-              <div class="reason-body">
-                <h2>Inaccurate Address Data</h2>
-                <p>The "Address Area" field used to determine if the maid resides in Satwa is unreliable, requiring manual address verification before invitations are sent.</p>
+          <h1>Attendance</h1>
+
+          <section class="subsection">
+            <div class="subsection-heading">
+              <span class="label">Current</span>
+              <h2>Why Attendance Is Still Manual</h2>
+            </div>
+            <p class="lede">Two core reasons were causing us to still do attendance manually on a daily basis:</p>
+            <div class="reason-grid">
+              <div class="reason-card">
+                <div class="reason-index">01</div>
+                <div class="reason-body">
+                  <h2>Inaccurate Address Data</h2>
+                  <p>The "Address Area" field used to determine if the maid resides in Satwa is unreliable, requiring manual address verification before invitations are sent.</p>
+                </div>
+              </div>
+              <div class="reason-card">
+                <div class="reason-index">02</div>
+                <div class="reason-body">
+                  <h2>Capacity Overflow</h2>
+                  <p>Available maids may exceed accommodation limits, requiring manual removal of invited maids to prevent overcrowding.</p>
+                </div>
               </div>
             </div>
-            <div class="reason-card">
-              <div class="reason-index">02</div>
-              <div class="reason-body">
-                <h2>Capacity Overflow</h2>
-                <p>Available maids may exceed accommodation limits, requiring manual removal of invited maids to prevent overcrowding.</p>
+          </section>
+
+          <section class="subsection">
+            <div class="subsection-heading">
+              <span class="label">Automation</span>
+              <h2>Automation of Attendance Flow</h2>
+            </div>
+            <p class="lede">Maids will be categorized into three attendance types, with invitations sent automatically at 5:00 PM daily via chatbot.</p>
+            <div class="grid-3">
+              <div class="card">
+                <span class="icon">🏠</span>
+                <h2>Live Attendance</h2>
+                <p>Maids living in Satwa or nearby, plus those reserved for prospects will be invited to the accommodation.</p>
+              </div>
+              <div class="card">
+                <span class="icon">📡</span>
+                <h2>Remote Attendance</h2>
+                <p>Pre-available maids and maids based in Abu Dhabi. No physical accommodation required. No available maid in Dubai will have remote attendance.</p>
+              </div>
+              <div class="card">
+                <span class="icon">🚫</span>
+                <h2>No Attendance</h2>
+                <p>Maids who haven't relocated yet, or are sick or assigned office work.</p>
               </div>
             </div>
-          </div>
-          <div class="footer-tag">1 of 9</div>
+
+            <div class="section-title">Capacity & Availability</div>
+            <div class="grid-4">
+              <div class="stat">
+                <span class="tag">Filipina</span>
+                <div class="num">70</div>
+                <p>Maximum Satwa accommodation capacity</p>
+              </div>
+              <div class="stat">
+                <span class="tag">African</span>
+                <div class="num">50</div>
+                <p>Maximum Satwa accommodation capacity</p>
+              </div>
+              <div class="stat">
+                <span class="tag">Filipina</span>
+                <div class="num">50</div>
+                <p>Minimum required availability</p>
+              </div>
+              <div class="stat">
+                <span class="tag">African</span>
+                <div class="num">30</div>
+                <p>Minimum required availability</p>
+              </div>
+            </div>
+
+            <div class="section-title">Remote vs Onsite Analytics</div>
+            <a class="link-card" href="https://remote-vs-live-attendance.vercel.app/dubai-attendance-trend.html" target="_blank" rel="noopener">
+              <div class="link-card-icon">📈</div>
+              <div class="link-card-body">
+                <div class="link-card-title">Remote vs Onsite Analytics</div>
+                <div class="link-card-sub">Dubai attendance trend, remote vs on-site breakdown by nationality and day</div>
+              </div>
+              <div class="link-card-arrow">↗</div>
+            </a>
+          </section>
+
+          <section class="subsection">
+            <div class="subsection-heading">
+              <span class="label">With Client (Not Picked Up)</span>
+              <h2>With-Client (Not Picked Up) Maid Communication</h2>
+            </div>
+            <div class="grid-3">
+              <div class="card">
+                <h2>Current Flow</h2>
+                <p>Maids who are With Client (Not Picked Up) are not coming to the center. We wanted to look into bringing them, assuming their presence at the accommodation was necessary for hygiene preparation and delay prevention.</p>
+              </div>
+              <div class="card">
+                <h2>Client Survey</h2>
+                <p>After surveying clients who received placements in the past week, zero complaints were recorded related to maid hygiene or arrival delays when maids commuted directly from home.</p>
+              </div>
+              <div class="card">
+                <h2>Recommended Policy</h2>
+                <p>Keep With Client (Not Picked Up) maids at home. Their presence at the accommodation reduces actual availability without adding operational value.</p>
+                <p>Follow-up via chat can happen to make sure the maid has no problem joining her customer without physically bringing her to the accommodation.</p>
+              </div>
+            </div>
+          </section>
+
+          <div class="footer-tag">1 of 7</div>
         </article>
 
-        <!-- Slide 2 -->
+        <!-- Slide 2: Current Relocation Flow -->
         <article class="slide" data-index="2">
           <div class="eyebrow-tag">Section 02</div>
-          <h1>Automation of Attendance Flow</h1>
-          <p class="lede">Maids will be categorized into three attendance types, with invitations sent automatically at 5:00 PM daily via chatbot.</p>
-          <div class="grid-3">
-            <div class="card">
-              <span class="icon">🏠</span>
-              <h2>Live Attendance</h2>
-              <p>Maids living in Satwa or nearby, plus those reserved for prospects will be invited to the accommodation.</p>
-            </div>
-            <div class="card">
-              <span class="icon">📡</span>
-              <h2>Remote Attendance</h2>
-              <p>Pre-available maids and maids based in Abu Dhabi. No physical accommodation required. No available maid in Dubai will have remote attendance.</p>
-            </div>
-            <div class="card">
-              <span class="icon">🚫</span>
-              <h2>No Attendance</h2>
-              <p>Maids who haven't relocated yet, or are sick or assigned office work.</p>
-            </div>
-          </div>
-
-          <div class="section-title">Capacity & Availability</div>
-          <div class="grid-4">
-            <div class="stat">
-              <span class="tag">Filipina</span>
-              <div class="num">70</div>
-              <p>Maximum Satwa accommodation capacity</p>
-            </div>
-            <div class="stat">
-              <span class="tag">African</span>
-              <div class="num">50</div>
-              <p>Maximum Satwa accommodation capacity</p>
-            </div>
-            <div class="stat">
-              <span class="tag">Filipina</span>
-              <div class="num">50</div>
-              <p>Minimum required availability</p>
-            </div>
-            <div class="stat">
-              <span class="tag">African</span>
-              <div class="num">30</div>
-              <p>Minimum required availability</p>
-            </div>
-          </div>
-
-          <div class="section-title">Remote vs Onsite Analytics</div>
-          <a class="link-card" href="https://remote-vs-live-attendance.vercel.app/dubai-attendance-trend.html" target="_blank" rel="noopener">
-            <div class="link-card-icon">📈</div>
-            <div class="link-card-body">
-              <div class="link-card-title">Remote vs Onsite Analytics</div>
-              <div class="link-card-sub">Dubai attendance trend, remote vs on-site breakdown by nationality and day</div>
-            </div>
-            <div class="link-card-arrow">↗</div>
-          </a>
-          <div class="footer-tag">2 of 9</div>
-        </article>
-
-        <!-- Slide 3 -->
-        <article class="slide" data-index="3">
-          <div class="eyebrow-tag">Section 03</div>
           <h1>Current Relocation Flow</h1>
           <div class="grid-3">
             <div class="step">
@@ -786,12 +849,12 @@
             </div>
             <div class="link-card-arrow">↗</div>
           </a>
-          <div class="footer-tag">3 of 9</div>
+          <div class="footer-tag">2 of 7</div>
         </article>
 
-        <!-- Slide 4 -->
-        <article class="slide" data-index="4">
-          <div class="eyebrow-tag">Section 04</div>
+        <!-- Slide 3: Automation of the Relocation Flow -->
+        <article class="slide" data-index="3">
+          <div class="eyebrow-tag">Section 03</div>
           <h1>Automation of the Relocation Flow</h1>
           <div class="grid-3">
             <div class="step">
@@ -825,12 +888,12 @@
               <p>If the maid shares her address over the chatbot within her Loss Making period, she is invited to next day attendance and marked as available again in the accommodation.</p>
             </div>
           </div>
-          <div class="footer-tag">4 of 9</div>
+          <div class="footer-tag">3 of 7</div>
         </article>
 
-        <!-- Slide 5 -->
-        <article class="slide" data-index="5">
-          <div class="eyebrow-tag">Section 05</div>
+        <!-- Slide 4: Reducing restrictions on same day bookings -->
+        <article class="slide" data-index="4">
+          <div class="eyebrow-tag">Section 04</div>
           <h1>Reducing restrictions on same day bookings</h1>
           <p class="lede">We previously had restrictions that did not allow customers to book same day taxis after 12:00 PM.</p>
           <div class="grid-2">
@@ -843,34 +906,12 @@
               <p>Our peak tagging hours are 12:00 PM and 2:00 PM after the previous 12:00 PM cutoff. By cutting the buffer from 4 hours to 2 hours and pushing the last taxi to 4:00 PM, customers can now place same-day bookings during the highest-demand window of the day.</p>
             </div>
           </div>
-          <div class="footer-tag">5 of 9</div>
+          <div class="footer-tag">4 of 7</div>
         </article>
 
-        <!-- Slide 6 -->
-        <article class="slide" data-index="6">
-          <div class="eyebrow-tag">Section 06</div>
-          <h1>With-Client (Not Picked Up) Maid Communication</h1>
-          <div class="grid-3">
-            <div class="card">
-              <h2>Current Flow</h2>
-              <p>Maids who are With Client (Not Picked Up) are not coming to the center. We wanted to look into bringing them, assuming their presence at the accommodation was necessary for hygiene preparation and delay prevention.</p>
-            </div>
-            <div class="card">
-              <h2>Client Survey</h2>
-              <p>After surveying clients who received placements in the past week, zero complaints were recorded related to maid hygiene or arrival delays when maids commuted directly from home.</p>
-            </div>
-            <div class="card">
-              <h2>Recommended Policy</h2>
-              <p>Keep With Client (Not Picked Up) maids at home. Their presence at the accommodation reduces actual availability without adding operational value.</p>
-              <p>Follow-up via chat can happen to make sure the maid has no problem joining her customer without physically bringing her to the accommodation.</p>
-            </div>
-          </div>
-          <div class="footer-tag">6 of 9</div>
-        </article>
-
-        <!-- Slide 7 -->
-        <article class="slide" data-index="7">
-          <div class="eyebrow-tag">Section 07</div>
+        <!-- Slide 5: Improvements in Refusal Rates -->
+        <article class="slide" data-index="5">
+          <div class="eyebrow-tag">Section 05</div>
           <h1>Improvements in Refusal Rates</h1>
           <p class="lede">April vs May 2026</p>
           <div class="grid-2" style="margin-bottom:18px;">
@@ -895,12 +936,12 @@
               <p>In a sample of 97 briefings (46 live, 51 remote), all maids accepted and successfully joined their customer's home, with no difference between live and remote briefings.</p>
             </div>
           </div>
-          <div class="footer-tag">7 of 9</div>
+          <div class="footer-tag">5 of 7</div>
         </article>
 
-        <!-- Slide 8 -->
-        <article class="slide" data-index="8">
-          <div class="eyebrow-tag">Section 08</div>
+        <!-- Slide 6: No-Show Deductions Policy -->
+        <article class="slide" data-index="6">
+          <div class="eyebrow-tag">Section 06</div>
           <h1>No-Show Deductions Policy</h1>
           <p class="lede">Without the free bus option, late arrivals to the Satwa accommodation are a risk. A new deduction policy creates accountability while keeping the process fair and consistent.</p>
           <div class="grid-3">
@@ -920,17 +961,17 @@
               <p>The maid is automatically invited to the accommodation the following day to be marked present and reinstated.</p>
             </div>
           </div>
-          <div class="footer-tag">8 of 9</div>
+          <div class="footer-tag">6 of 7</div>
         </article>
 
-        <!-- Slide 9 -->
-        <article class="slide" data-index="9">
-          <div class="eyebrow-tag">Section 09</div>
+        <!-- Slide 7: Part-Time Cleaners Cost Issue -->
+        <article class="slide" data-index="7">
+          <div class="eyebrow-tag">Section 07</div>
           <h1>Part-Time Cleaners Cost Issue</h1>
           <div class="card">
             <p>A group of live-out housemaids were being recruited and working as part-time cleaners — but their salaries and visa costs were being charged to the live-out payroll.</p>
           </div>
-          <div class="footer-tag">9 of 9</div>
+          <div class="footer-tag">7 of 7</div>
         </article>
 
       </div>
